@@ -18,9 +18,10 @@ const ProductDetail = () => {
 
   return (
     <div>
-      <h1>Product ID: {id}</h1>
+      <h2 className="text-2xl">Product ID: {id}</h2>
       <ul>
         <li>{product?.title}</li>
+        <img className="max-w-sm" src={product?.images} alt="" />
         <li>{product?.description}</li>
         <li>{product?.price}</li>
       </ul>

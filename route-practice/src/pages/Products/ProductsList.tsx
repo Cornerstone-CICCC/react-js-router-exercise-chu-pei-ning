@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import type { Product } from "../../types/product.types"
 import { Link } from "react-router-dom"
+import { buttonVariants } from "@/components/ui/button"
+
 
 const ProductsList = () => {
   const [products, setProducts] = useState<Product[]>([])
@@ -16,12 +18,12 @@ const ProductsList = () => {
 
   return (
     <div>
-      <h2>Product List</h2>
+      <h2 className="text-2xl">Product List</h2>
       <ul>
         {products.map(p => (
           <li key={p.id}>
             <span>{p.title}</span>
-            <Link to={`/product/${p.id}`}>Veiw details</Link>
+            <Link to={`/product/${p.id}`} className={buttonVariants({ variant: "outline" })}>Veiw details</Link>
           </li>
         ))}
       </ul>
